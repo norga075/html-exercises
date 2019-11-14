@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <style>
+        html {
+            background: url("nikola-jovanovic-QGPmWrclELg-unsplash.jpg");
+            background-size: cover;
+        }
+        .header {
+            text-align: center;
+            font-family: Gastromond, Serif;
+            font-weight: normal;
+            color: darkorange;
+            font-size: 65px;
+            letter-spacing: 8px;
+            text-shadow: .2em .2em .1em silver
+        }
+        .description {
+            font-size: 16px;
+            font-weight: lighter;
+            font-family: Avenir, sans-serif;
+            margin-right: 250px;
+            margin-left: 250px;
+            color: white;
+        }
+
+        .home {
+            font-family: Avenir, sans-serif;
+            font-size: 16px;
+            top: 16px;
+            position: absolute;
+            padding-left: 1515px;
+            color: darkorange;
+            text-decoration: none;
+            padding-right: 10px;
+        }
+
+        * {box-sizing:border-box}
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 650px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 25px;
+            left: 525px;
+            color: darkorange;
+            font-family: Avenir,serif;
+            font-size: 14px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<h1 class="header">ABOUT</h1>
+<p class="description">Keegan’s Irish Pub was designed and built by O’Sullivan Interiors in Waterford, Ireland. The design was completed
+    in late 2001 and the pub was built in Waterford then transported via container ship and train in January, 2002.</p>
+<p class="description">We take great pride in our offerings, especially our perfect pints. Keegan’s Pub is honored year after year by Guinness
+    for the way we pour and serve our beer. All our Guinness comes from the St. James Gate brewery in Dublin, Ireland and
+    we pour it at the right temperature with right nitrogen to CO2 mixture.</p>
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="SLIDESHOW_01.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="SLIDESHOW_02.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="SLIDESHOW_03.jpg" style="width:100%">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+<a class="home" href="Keegans_Pub.html" target="_blank">BACK TO HOME</a>
+<a><p class="footer">HAPPY HOUR: MON-FRI (4:30-6:30 PM) LATE NIGHT HAPPY HOUR: SUN-THURS (11:00-1:00 AM)</p></a>
+</body>
+</html>
